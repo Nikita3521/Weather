@@ -36,14 +36,31 @@ body{
 }
 
 .input {
-    margin-top: 30px;
     font-size: 18px;
-    padding-left: 16px;
     border: 0px;
+    max-width: 200px;
     border-radius: 20px;
-    height: 40px;
-    width: 240px;
+    padding: 10px 0px;
+    padding-left: 10px;
     background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.find {
+    margin-top: 50px;   
+    display: flex;  
+    justify-content: center;
+    gap: 5px;
+}
+
+.find-sity {
+    padding: 0px 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8); 
+}
+
+.find-img{
+    height: 24px;
+    width: 25px;
 }
 
 .weather-img {
@@ -113,3 +130,4 @@ body{
 
 .wind-info {
 }
+

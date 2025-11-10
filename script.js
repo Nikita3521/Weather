@@ -1,8 +1,11 @@
-const url = 'https://api.openweathermap.org/data/2.5/weather?q=Chernihiv&appid=d65ca3417d3624d11288475acc964b98&units=metric';
+let url = 'https://api.openweathermap.org/data/2.5/weather?q=Chernihiv&appid=d65ca3417d3624d11288475acc964b98&units=metric';
 let degree = document.querySelector('.degree')
 let speedWind = document.querySelector('.speed-wind')
 let humidityPercent = document.querySelector('.humidity-percent')
 let weatherImg = document.getElementById('img')
+const btnFind = document.querySelector('.find-sity')
+const input = document.querySelector('.input')
+let inputValue = input.value
 const options = {
     method: 'GET'
 };
@@ -24,7 +27,20 @@ async function getWeather() {
     } catch (error) {
         console.error(error);
     }
+}
 
+btnFind.addEventListener('click', function() {
+    getCity()
+} )
+
+function getCity() {
+    input.addEventListener('input', function () {
+        inputValue = input.value
+    });
+        url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=d65ca3417d3624d11288475acc964b98&units=metric`;
+        console.log(url);
+        getCity()
+        getWeather()
 }
 
 getWeather()
