@@ -3,19 +3,23 @@ let degree = document.querySelector('.degree')
 let speedWind = document.querySelector('.speed-wind')
 let humidityPercent = document.querySelector('.humidity-percent')
 let weatherImg = document.getElementById('img')
+let findImg = document.querySelector('.find-img')
 const cityName = document.querySelector('.city')
 const btnFind = document.querySelector('.find-sity')
 const input = document.querySelector('.input')
 let mask = document.querySelector('.reloading')
+const appWeather = document.querySelector('window-weather')
+const loader = document.querySelector('.loader');
 const options = {
     method: 'GET'
 };
+
 async function getWeather() {
     try {
         const response = await fetch(url, options);
         const data = await response.json();
         if (data.cod === "404") {
-            input.style.border = "2px solid red";
+            input.style.border = "3px solid red";
             input.placeholder = "City not found";
             input.value = "";
             return;
@@ -36,12 +40,17 @@ async function getWeather() {
         }
     } catch (error) {
         console.error(error);
+    } finally {
+        if (loader) loader.style.display = "none";
+        if (findImg) findImg.style.display = "";
     }
 }
 
 btnFind.addEventListener('click', function () {
     input.style.border = "";
     input.placeholder = "";
+    if (loader) loader.style.display = "block";
+    if (findImg) findImg.style.display = "none";
     getCity()
 
 })
@@ -58,10 +67,3 @@ function getCity() {
 }
 
 getWeather()
-
-window.addEventListener('load', () => {
-    mask.classList.add("hide");
-    setTimeout(() => {
-        mask.remove();
-    }, 600);
-})
