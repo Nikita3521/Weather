@@ -43,6 +43,7 @@ btnFind.addEventListener('click', function () {
     input.style.border = "";
     input.placeholder = "";
     getCity()
+
 })
 
 function getCity() {
