@@ -14,6 +14,10 @@ const options = {
 };
 
 async function getWeather() {
+    input.style.outline = "";
+    input.placeholder = "";
+    if (loader) loader.style.display = "block";
+    if (contentWeather) contentWeather.style.display = "none";
     try {
         const response = await fetch(url, options);
         const data = await response.json();
@@ -51,23 +55,17 @@ async function getWeather() {
 }
 
 btnFind.addEventListener('click', function () {
-    input.style.outline = "";
-    input.placeholder = "";
-    if (loader) loader.style.display = "block";
-    if (contentWeather) contentWeather.style.display = "none";
     getCity()
+    console.log('eeeeeeeeee');
+    
 
 })
 
 function getCity() {
-    try {
         let inputValue = input.value;
         url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=d65ca3417d3624d11288475acc964b98&units=metric`;
         console.log(url);
         getWeather();
-    } catch (error) {
-        console.log(error);
-    }
 }
 
 getWeather()

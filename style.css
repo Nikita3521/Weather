@@ -218,3 +218,8 @@ body {
 .hide {
     opacity: 0;
 }
+
+.form-submit {
+    display: flex;
+    gap: 10px;
+}

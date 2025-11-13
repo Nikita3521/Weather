@@ -12,32 +12,34 @@
 <body>
     <section class="window-weather">
         <div class="find">
-        <input class="input" type="text" placeholder="search city">
-        <button class="find-sity"><img class="find-img" src="/img/search.png" alt=""></button>
+            <form class="form-submit" onsubmit="return false;">
+                <input class="input" type="text" placeholder="search city">
+                <button class="find-sity" type="submit" onclick="getCity()"><img class="find-img" src="/img/search.png" alt=""></button>
+            </form>
         </div>
         <div class="loader"></div>
         <div class="content-weather">
-        <div class="info">
-            <img class="weather-img" id="img" src="/img/cloud.png" alt="">
-            <p class="temperature"><span class="degree"></span>°C</p>
-            <p class="city"></p>
-        </div>
-        <div class="info2">
-            <div class="wind">
-                <img class="wind-img" src="/img/wind.png" alt="">
-                <div class="wind-info">
-                    <p class="text-weather"><span class="speed-wind"></span> km/h</p>
-                    <p class=" text-weather">Wind speed</p>
+            <div class="info">
+                <img class="weather-img" id="img" src="/img/cloud.png" alt="">
+                <p class="temperature"><span class="degree"></span>°C</p>
+                <p class="city"></p>
+            </div>
+            <div class="info2">
+                <div class="wind">
+                    <img class="wind-img" src="/img/wind.png" alt="">
+                    <div class="wind-info">
+                        <p class="text-weather"><span class="speed-wind"></span> km/h</p>
+                        <p class=" text-weather">Wind speed</p>
+                    </div>
+                </div>
+                <div class="humidity">
+                    <img class="humidity-img" src="/img/humidity.png" alt="">
+                    <div class="humidity-info">
+                        <p class="text-weather"><span class="humidity-percent"></span>%</p>
+                        <p class="text-weather">Humidity</p>
+                    </div>
                 </div>
             </div>
-            <div class="humidity">
-                <img class="humidity-img" src="/img/humidity.png" alt="">
-                <div class="humidity-info">
-                    <p class="text-weather"><span class="humidity-percent"></span>%</p>
-                    <p class="text-weather">Humidity</p>
-                </div>
-            </div>
-        </div>
         </div>
     </section>
 </body>
