@@ -22,6 +22,11 @@ async function getWeather() {
             input.placeholder = "City not found";
             input.value = "";
             return;
+        } else if (data.cod === "400") {
+            input.style.outline = "3px solid red";
+            input.placeholder = "City not found";
+            input.value = "";
+            return;
         }
         console.log(data);
         degree.textContent = parseInt(data.main.temp)
