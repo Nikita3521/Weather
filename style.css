@@ -200,9 +200,9 @@ body {
 
 .loader {
     margin: auto;
-    width: 24px;
-    height: 24px;
-    border: 6px solid rgba(13, 71, 161, 0.6);
+    width: 80px;
+    height: 80px;
+    border: 12px solid rgba(13, 71, 161, 0.6);
     border-radius: 50%;
     border-left-color: #0d47a1;
     animation: loader 1.3s linear infinite;
