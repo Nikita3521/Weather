@@ -19,12 +19,12 @@ async function getWeather() {
         const data = await response.json();
         if (data.cod === "404") {
             input.style.outline = "3px solid red";
-            input.placeholder = "City not found";
+            input.placeholder = data.message;
             input.value = "";
             return;
         } else if (data.cod === "400") {
             input.style.outline = "3px solid red";
-            input.placeholder = "City not found";
+            input.placeholder = data.message;
             input.value = "";
             return;
         }
